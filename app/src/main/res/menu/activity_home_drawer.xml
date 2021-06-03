@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_trangchu"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="@string/menu_trangchu" />
+        <item
+            android:id="@+id/nav_hoso"
+            android:icon="@drawable/ic_baseline_perm_contact_calendar_24"
+            android:title="@string/menu_hoso" />
+        <item
+            android:id="@+id/nav_theloai"
+            android:icon="@drawable/ic_baseline_category_24"
+            android:title="@string/menu_theloai" />
+        <item
+            android:id="@+id/nav_voucher"
+            android:icon="@drawable/ic_baseline_local_offer_24"
+            android:title="@string/menu_voucher" />
+        <item
+            android:id="@+id/nav_giohang"
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
+            android:title="@string/menu_giohang" />
+        <item
+            android:id="@+id/nav_thanhtoan"
+            android:icon="@drawable/ic_baseline_payment_24"
+            android:title="@string/menu_thanhtoan" />
+        <item
+            android:id="@+id/nav_dangnhap"
+            android:icon="@drawable/ic_baseline_person_pin_24"
+            android:title="@string/menu_dangnhap" />
+        <item
+            android:id="@+id/nav_dangki"
+            android:icon="@drawable/ic_baseline_emoji_emotions_24"
+            android:title="@string/menu_dangki" />
+        <item
+            android:id="@+id/nav_dangxuat"
+            android:icon="@drawable/ic_baseline_exit_to_app_24"
+            android:title="@string/menu_dangxuat" />
+    </group>
+</menu>

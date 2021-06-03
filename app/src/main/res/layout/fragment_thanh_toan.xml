@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color"
+    android:weightSum="10"
+    tools:context=".ThanhToanFragment">
+
+    <TextView
+        android:layout_margin="8dp"
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="#E5FBF3"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:fontFamily="@font/theanodidot"
+        android:text="Hiện tại bạn vui lòng thanh toán khi nhận hàng nhé !" />
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_weight="6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/nami"
+        android:scaleType="fitXY">
+    </ImageView>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="#E5FBF3"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:fontFamily="@font/theanodidot"
+        android:text="Chúng tôi sẽ bổ sung thêm phương thức thanh toán online sau." />
+    <TextView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="#E5FBF3"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:fontFamily="@font/theanodidot"
+        android:text="Xin lỗi vì sự bất tiện này :(" />
+
+</LinearLayout>

@@ -1,0 +1,2 @@
+rootProject.name = "TraSua1"
+include ':app'

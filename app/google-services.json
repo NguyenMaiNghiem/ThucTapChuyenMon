@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1062211969332",
+    "project_id": "trasua1",
+    "storage_bucket": "trasua1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062211969332:android:cbd838adc50b62cef28561",
+        "android_client_info": {
+          "package_name": "com.example.trasua1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1062211969332-9u1mik44imm4n5dkuomkscsuc1qbqrno.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcYw8-kWYo57JqqQTP9wxuZPyu36CNzaQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1062211969332-9u1mik44imm4n5dkuomkscsuc1qbqrno.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

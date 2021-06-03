@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HoSoFragment">
+
+    <ImageView
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:src="@drawable/ic_programmer">
+    </ImageView>
+    <EditText
+        android:id="@+id/edtPhoneUS"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/round_border"
+        android:drawableLeft="@drawable/ic_baseline_smartphone_24"
+        android:gravity="center"
+        android:hint="Số điện thoại"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:padding="16sp"
+        android:textSize="20sp" />
+    <EditText
+        android:id="@+id/edtNameUS"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Tên của bạn"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:inputType="textPersonName"
+        android:drawableLeft="@drawable/ic_baseline_person_pin_24"
+        android:background="@drawable/round_border"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:padding="16sp"/>
+    <EditText
+        android:id="@+id/edtEmailUS"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Email"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/round_border"
+        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:padding="16sp"/>
+    <EditText
+        android:id="@+id/edtAddressUS"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Địa chỉ"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/round_border"
+        android:drawableLeft="@drawable/ic_baseline_location_on_24"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:padding="16sp"/>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ProgressBar>
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Cập Nhật"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_bg"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

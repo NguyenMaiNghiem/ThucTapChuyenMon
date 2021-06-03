@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_trangchu">
+
+    <fragment
+        android:id="@+id/nav_trangchu"
+        android:name="com.example.trasua1.ui.home.HomeFragment"
+        android:label="@string/menu_trangchu"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_giohang"
+        android:name="com.example.trasua1.ui.giohang.GioHangFragment"
+        android:label="@string/menu_giohang"
+        tools:layout="@layout/fragment_gio_hang" />
+
+    <fragment
+        android:id="@+id/nav_dangxuat"
+        android:name="com.example.trasua1.ui.dangxuat.DangXuatFragment"
+        android:label="@string/menu_dangxuat"
+        tools:layout="@layout/fragment_dang_xuat" >
+        <action
+            android:id="@+id/action_nav_dangxuat_to_nav_trangchu"
+            app:destination="@id/nav_trangchu" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_dangnhap"
+        android:name="com.example.trasua1.DangNhapFragment"
+        android:label="@string/menu_dangnhap"
+        tools:layout="@layout/fragment_dang_nhap" >
+        <action
+            android:id="@+id/action_nav_dangnhap_to_nav_dangki"
+            app:destination="@id/nav_dangki" />
+        <action
+            android:id="@+id/action_nav_dangnhap_to_nav_trangchu"
+            app:destination="@id/nav_trangchu" />
+        <action
+            android:id="@+id/action_nav_dangnhap_to_resetPassFragment"
+            app:destination="@id/resetPassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_dangki"
+        android:name="com.example.trasua1.DangKiFragment"
+        android:label="@string/menu_dangki"
+        tools:layout="@layout/fragment_dang_ki" >
+        <action
+            android:id="@+id/action_nav_dangki_to_nav_dangnhap"
+            app:destination="@id/nav_dangnhap" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_thanhtoan"
+        android:name="com.example.trasua1.ThanhToanFragment"
+        android:label="@string/menu_thanhtoan"
+        tools:layout="@layout/fragment_thanh_toan" />
+    <fragment
+        android:id="@+id/nav_hoso"
+        android:name="com.example.trasua1.HoSoFragment"
+        android:label="@string/menu_hoso"
+        tools:layout="@layout/fragment_ho_so" />
+    <fragment
+        android:id="@+id/nav_theloai"
+        android:name="com.example.trasua1.TheLoaiFragment"
+        android:label="@string/menu_theloai"
+        tools:layout="@layout/fragment_the_loai" />
+    <fragment
+        android:id="@+id/nav_voucher"
+        android:name="com.example.trasua1.VoucherFragment"
+        android:label="@string/menu_voucher"
+        tools:layout="@layout/fragment_voucher" />
+    <fragment
+        android:id="@+id/resetPassFragment"
+        android:name="com.example.trasua1.ResetPassFragment"
+        android:label="fragment_reset_pass"
+        tools:layout="@layout/fragment_reset_pass" />
+</navigation>
