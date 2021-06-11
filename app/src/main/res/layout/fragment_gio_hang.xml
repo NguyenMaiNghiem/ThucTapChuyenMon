@@ -84,7 +84,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:background="@drawable/round_bg"
+            android:background="@drawable/round_bg2"
             android:text="Mua Ngay"
             android:padding="10dp"
             android:textColor="@color/white"

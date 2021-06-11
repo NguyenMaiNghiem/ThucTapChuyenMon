@@ -2,12 +2,12 @@ package com.example.trasua1.models;
 
 public class VoucherModel {
     public String img_url;
-    public String price;
+    public int price;
 
     public VoucherModel() {
     }
 
-    public VoucherModel(String img_url, String price) {
+    public VoucherModel(String img_url, int price) {
         this.img_url = img_url;
         this.price = price;
     }
@@ -20,11 +20,11 @@ public class VoucherModel {
         this.img_url = img_url;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }

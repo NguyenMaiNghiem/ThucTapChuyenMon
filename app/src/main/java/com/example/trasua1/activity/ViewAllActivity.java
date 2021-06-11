@@ -57,6 +57,24 @@ public class ViewAllActivity extends AppCompatActivity {
         viewAllAdapter = new ViewAllAdapter(this,viewAllModelList);
         recyclerView.setAdapter(viewAllAdapter);
 
+        /////Getting all
+//
+//            firestore.collection("AllSanPham").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                @Override
+//                public void onComplete(@NonNull @NotNull Task<QuerySnapshot> task) {
+//
+//                    for (DocumentSnapshot documentSnapshot:task.getResult().getDocuments()){
+//                        ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
+//                        viewAllModelList.add(viewAllModel);
+//                        viewAllAdapter.notifyDataSetChanged();
+//
+//                        progressBar.setVisibility(View.GONE);
+//                        recyclerView.setVisibility(View.VISIBLE);
+//                    }
+//
+//                }
+//            });
+
 
 
         /////Getting trasua
@@ -129,6 +147,7 @@ public class ViewAllActivity extends AppCompatActivity {
 
                         progressBar.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
+
                     }
 
                 }

@@ -55,6 +55,12 @@ public class MyCardAdapter extends RecyclerView.Adapter<MyCardAdapter.ViewHolder
         holder.quantity.setText(myCardModelList.get(position).getTotalQuantity());
         holder.totalPrice.setText(String.valueOf(myCardModelList.get(position).getTotalPrice()));
 
+        //tính tổng số tiền
+        totalPrice = totalPrice + myCardModelList.get(position).getTotalPrice();
+        Intent intent = new Intent("MyToTalAmount");
+        intent.putExtra("totalAmount",totalPrice);
+        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
+
         holder.deleteItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,12 +82,6 @@ public class MyCardAdapter extends RecyclerView.Adapter<MyCardAdapter.ViewHolder
                         });
             }
         });
-
-        //tính tổng số tiền
-        totalPrice = totalPrice + myCardModelList.get(position).getTotalPrice();
-        Intent intent = new Intent("MyToTalAmount");
-        intent.putExtra("totalAmount",totalPrice);
-        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
 
     }
 

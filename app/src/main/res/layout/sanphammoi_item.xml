@@ -65,6 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="COMMING SOON"
+            android:textAlignment="center"
             android:textSize="23sp"
             android:textStyle="bold"
             android:textColor="#DC4F22"

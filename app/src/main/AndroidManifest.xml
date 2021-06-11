@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TraSua1">
-        <activity android:name=".activity.PlacedOderActivity"></activity>
+        <activity android:name=".activity.ViewAllActivity2"></activity>
+        <activity android:name=".activity.ViewAllActivity1" />
+        <activity android:name=".activity.PlacedOderActivity" />
         <activity android:name=".activity.DetailActivity" />
         <activity android:name=".activity.ViewAllActivity" />
         <activity

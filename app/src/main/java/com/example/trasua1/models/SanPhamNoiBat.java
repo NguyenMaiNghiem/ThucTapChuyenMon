@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 public class SanPhamNoiBat implements Serializable {
     public String name,rating,discount,category,img_url;
-    public String price;
+    public int price;
 
     public SanPhamNoiBat() {
     }
 
-    public SanPhamNoiBat(String name, String rating, String discount, String category, String img_url, String price) {
+    public SanPhamNoiBat(String name, String rating, String discount, String category, String img_url, int price) {
         this.name = name;
         this.rating = rating;
         this.discount = discount;
@@ -17,11 +17,11 @@ public class SanPhamNoiBat implements Serializable {
         this.img_url = img_url;
         this.price = price;
     }
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

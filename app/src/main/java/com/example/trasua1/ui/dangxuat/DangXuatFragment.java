@@ -29,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class DangXuatFragment extends Fragment {
     Button btnDangXuat;
-    TextView EmailAddress,Name,Phone,TamBiet;
+    TextView Email,Address,Name,Phone,TamBiet;
 
     ProgressBar progressBar;
 
@@ -49,36 +49,46 @@ public class DangXuatFragment extends Fragment {
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance("https://trasua1-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users");
-        userID = user.getUid();
 
-        EmailAddress = root.findViewById(R.id.EmailAddress);
+
+        Email = root.findViewById(R.id.Email);
         Name = root.findViewById(R.id.Name);
         Phone = root.findViewById(R.id.Phone);
+        Address = root.findViewById(R.id.Address);
         TamBiet = root.findViewById(R.id.TamBiet);
 
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                UserModel userProfile = snapshot.getValue(UserModel.class);
+        if (user != null){
+            userID = user.getUid();
+            if (userID != null){
+                reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                        UserModel userProfile = snapshot.getValue(UserModel.class);
 
-                if (userProfile != null){
-                    String email = userProfile.email;
-                    String phone = userProfile.phone;
-                    String name = userProfile.name;
+                        if (userProfile != null){
+                            String email = userProfile.email;
+                            String phone = userProfile.phone;
+                            String address = userProfile.address;
+                            String name = userProfile.name;
 
-                    TamBiet.setText("Tạm biệt "+name+"!");
-                    EmailAddress.setText(email);
-                    Name.setText(name);
-                    Phone.setText(phone);
-                }
+
+                            TamBiet.setText("Tạm biệt "+name+"!");
+                            Email.setText(email);
+                            Address.setText(address);
+                            Name.setText(name);
+                            Phone.setText(phone);
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                        Toast.makeText(getContext(),"Có lỗi xảy ra !!! ",Toast.LENGTH_LONG).show();
+                    }
+                });
             }
 
-            @Override
-            public void onCancelled(@NonNull @NotNull DatabaseError error) {
-                Toast.makeText(getActivity(),"Có lỗi xảy ra !!! ",Toast.LENGTH_LONG).show();
+        }
 
-            }
-        });
+
 
         btnDangXuat.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -28,6 +28,7 @@ import com.example.trasua1.models.MyCardModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -52,6 +53,9 @@ public class GioHangFragment extends Fragment {
     List<MyCardModel> cardModelList;
     ProgressBar progressBar;
 
+    private String userID;
+    private FirebaseUser user;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -61,7 +65,7 @@ public class GioHangFragment extends Fragment {
         db = FirebaseFirestore.getInstance();
 
         progressBar = root.findViewById(R.id.progressBar);
-        progressBar.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.GONE);
 
         buyNow = root.findViewById(R.id.buy_now);
         recyclerView = root.findViewById(R.id.recyclerview);
@@ -77,28 +81,35 @@ public class GioHangFragment extends Fragment {
         cardAdapter = new MyCardAdapter(getActivity(),cardModelList);
         recyclerView.setAdapter(cardAdapter);
 
-        db.collection("CurrentUser").document(auth.getCurrentUser().getUid())
-                .collection("AddToCart").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull @NotNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()){
-                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()){
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
-                        String documentId = documentSnapshot.getId();
+        if (user != null){
+            userID = user.getUid();
+            if (userID != null){
+                db.collection("CurrentUser").document(auth.getCurrentUser().getUid())
+                        .collection("AddToCart").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull @NotNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()){
+                            for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()){
 
-                        MyCardModel cardModel = documentSnapshot.toObject(MyCardModel.class);
+                                String documentId = documentSnapshot.getId();
 
-                        cardModel.setDocumentId(documentId);
+                                MyCardModel cardModel = documentSnapshot.toObject(MyCardModel.class);
 
-                        cardModelList.add(cardModel);
-                        cardAdapter.notifyDataSetChanged();
+                                cardModel.setDocumentId(documentId);
 
-                        progressBar.setVisibility(View.GONE);
-                        recyclerView.setVisibility(View.VISIBLE);
+                                cardModelList.add(cardModel);
+                                cardAdapter.notifyDataSetChanged();
+
+                                progressBar.setVisibility(View.GONE);
+                                recyclerView.setVisibility(View.VISIBLE);
+                            }
+                        }
                     }
-                }
+                });
             }
-        });
+        }
 
         buyNow.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -42,7 +42,7 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.ViewHold
     public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, int position) {
         Glide.with(context).load(sanPhamNoiBatList.get(position).getImg_url()).into(holder.popImg);
         holder.name.setText(sanPhamNoiBatList.get(position).getName());
-        holder.price.setText(sanPhamNoiBatList.get(position).getPrice());
+        holder.price.setText(sanPhamNoiBatList.get(position).getPrice()+" VNĐ");
         holder.rating.setText(sanPhamNoiBatList.get(position).getRating());
         holder.discount.setText(sanPhamNoiBatList.get(position).getDiscount());
 

@@ -5,15 +5,44 @@ public class UserModel {
     public String name;
     public String email;
     public String password;
+    public String address;
+    public String isAdmin;
+    public String profileImg;
 
     public UserModel() {
     }
 
-    public UserModel(String phone, String name, String email, String password) {
+    public UserModel(String phone, String name, String email, String address, String password) {
         this.phone = phone;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.address = address;
+        this.isAdmin = "false";
+    }
+
+    public String getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(String isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    public String getProfileImg() {
+        return profileImg;
+    }
+
+    public void setProfileImg(String profileImg) {
+        this.profileImg = profileImg;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getPhone() {

@@ -34,7 +34,7 @@ import java.util.regex.Pattern;
 public class DangKiFragment extends Fragment {
 
     Button btnDangKi;
-    EditText edtPhoneDK,edtNameDK,edtEmailDK,edtPassDK;
+    EditText edtPhoneDK,edtNameDK,edtEmailDK,edtPassDK,edtAddressDK;
     TextView txtDangNhap;
 
     FirebaseAuth auth;
@@ -62,6 +62,7 @@ public class DangKiFragment extends Fragment {
         edtPhoneDK = root.findViewById(R.id.edtPhoneDK);
         edtNameDK = root.findViewById(R.id.edtNameDK);
         edtEmailDK = root.findViewById(R.id.edtEmailDK);
+        edtAddressDK = root.findViewById(R.id.edtAddressDK);
         edtPassDK = root.findViewById(R.id.edtPassDK);
         txtDangNhap = root.findViewById(R.id.txtDangNhap);
 
@@ -87,6 +88,7 @@ public class DangKiFragment extends Fragment {
         String userPhone = edtPhoneDK.getText().toString().trim();
         String userName = edtNameDK.getText().toString().trim();
         String userEmail = edtEmailDK.getText().toString().trim();
+        String userAddress = edtAddressDK.getText().toString().trim();
         String userPass = edtPassDK.getText().toString().trim();
 
         if (userPhone.isEmpty()){
@@ -95,12 +97,17 @@ public class DangKiFragment extends Fragment {
             return;
         }
         if (userName.isEmpty()){
-            edtNameDK.setError("Số điện thoại không được bỏ trống");
+            edtNameDK.setError("Tên không được bỏ trống");
             edtNameDK.requestFocus();
             return;
         }
+        if (userAddress.isEmpty()){
+            edtAddressDK.setError("Địa chỉ không được bỏ trống");
+            edtAddressDK.requestFocus();
+            return;
+        }
         if (userEmail.isEmpty()){
-            edtEmailDK.setError("Số điện thoại không được bỏ trống");
+            edtEmailDK.setError("Email không được bỏ trống");
             edtEmailDK.requestFocus();
             return;
         }
@@ -126,7 +133,7 @@ public class DangKiFragment extends Fragment {
             public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
 
-                    UserModel userModel = new UserModel(userPhone,userName,userEmail,userPass);
+                    UserModel userModel = new UserModel(userPhone,userName,userEmail,userAddress,userPass);
 //                    String id = task.getResult().getUser().getUid();
 //                    database.getReference().child("Users").child(id).setValue(userModel);
 
@@ -137,11 +144,11 @@ public class DangKiFragment extends Fragment {
                         public void onComplete(@NonNull @NotNull Task<Void> task) {
                             if (task.isSuccessful()){
                                 progressBar.setVisibility(View.GONE);
-                                Toast.makeText(getActivity(), "Đăng kí thành công"+task.getException(),Toast.LENGTH_LONG).show();
+                                Toast.makeText(getContext(), "Đăng kí thành công"+task.getException(),Toast.LENGTH_LONG).show();
 
                             }else {
                                 progressBar.setVisibility(View.GONE);
-                                Toast.makeText(getActivity(), "Đăng  kí thất bại"+task.getException(),Toast.LENGTH_LONG).show();
+                                Toast.makeText(getContext(), "Đăng  kí thất bại"+task.getException(),Toast.LENGTH_LONG).show();
 
                             }
                         }
@@ -149,7 +156,7 @@ public class DangKiFragment extends Fragment {
                 }
                 else {
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(getActivity(), "Đăng  kí thất bại"+task.getException(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Đăng  kí thất bại"+task.getException(),Toast.LENGTH_LONG).show();
                 }
             }
         });

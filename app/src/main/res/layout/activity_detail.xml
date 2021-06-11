@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/Detail_layout"
     tools:context=".activity.DetailActivity">
 
     <ProgressBar
@@ -107,7 +108,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:gravity="center"
-        android:text="0"
+        android:text="1"
         android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@+id/add_item"
@@ -136,6 +137,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></androidx.appcompat.widget.AppCompatButton>
+        app:layout_constraintStart_toStartOf="parent">
+    </androidx.appcompat.widget.AppCompatButton>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.dangxuat.DangXuatFragment"
-    android:background="#36F3EC">
+    android:background="#5AE9FB">
 
     <TextView
         android:id="@+id/TamBiet"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textAlignment="center"
         android:textSize="50sp"
         android:layout_margin="10dp"
         android:text="Tạm biệt"
@@ -29,6 +31,7 @@
         <TextView
             android:layout_weight="1"
             android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -36,8 +39,9 @@
             android:text="Email : ">
         </TextView>
         <TextView
-            android:id="@+id/EmailAddress"
+            android:id="@+id/Email"
             android:layout_weight="3"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -55,6 +59,7 @@
         <TextView
             android:layout_weight="1"
             android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -64,6 +69,35 @@
         <TextView
             android:id="@+id/Name"
             android:layout_weight="3"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:weightSum="4"
+        >
+        <TextView
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Phone : ">
+        </TextView>
+        <TextView
+            android:id="@+id/Phone"
+            android:layout_weight="3"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -83,13 +117,15 @@
             android:layout_marginLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="Phone : ">
+            android:text="Address : ">
         </TextView>
         <TextView
-            android:id="@+id/Phone"
+            android:id="@+id/Address"
             android:layout_weight="3"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -114,8 +150,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="45sp"
-        android:fontFamily="@font/orangejuice"
-        android:text="Chúc bạn 1 ngày thật vui vẻ nhé">
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="#E84A22"
+        android:text="Chúc bạn 1 ngày vui vẻ !!!">
     </TextView>
 
 

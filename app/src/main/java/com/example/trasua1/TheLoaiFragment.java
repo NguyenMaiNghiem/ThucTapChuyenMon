@@ -77,7 +77,7 @@ public class TheLoaiFragment extends Fragment {
                             }
                         } else {
 
-                            Toast.makeText(getActivity(),"Lỗi"+task.getException(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(),"Lỗi"+task.getException(),Toast.LENGTH_SHORT).show();
 
                         }
                     }
