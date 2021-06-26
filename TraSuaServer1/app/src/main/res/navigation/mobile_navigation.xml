@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.trasuaserver1.ui.home.HomeFragment"
+        android:label="@string/menu_trangchu"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_hoso"
+        android:name="com.example.trasuaserver1.ui.hoso.HoSoFragment"
+        android:label="@string/menu_hoso"
+        tools:layout="@layout/fragment_ho_so" >
+        <action
+            android:id="@+id/action_nav_hoso_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_theloai"
+        android:name="com.example.trasuaserver1.ui.theloai.TheLoaiFragment"
+        android:label="@string/menu_theloai"
+        tools:layout="@layout/fragment_the_loai" />
+    <fragment
+        android:id="@+id/nav_dangxuat"
+        android:name="com.example.trasuaserver1.DangXuatFragment"
+        android:label="@string/menu_dangxuat"
+        tools:layout="@layout/fragment_dang_xuat" />
+    <fragment
+        android:id="@+id/nav_orders"
+        android:name="com.example.trasuaserver1.OrdersFragment"
+        android:label="@string/menu_order"
+        tools:layout="@layout/fragment_orders" />
+    <fragment
+        android:id="@+id/nav_voucher"
+        android:name="com.example.trasuaserver1.VoucherFragment"
+        android:label="@string/menu_voucher"
+        tools:layout="@layout/fragment_voucher" />
+</navigation>
