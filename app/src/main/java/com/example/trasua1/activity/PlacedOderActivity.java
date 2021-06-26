@@ -70,45 +70,38 @@ public class PlacedOderActivity extends AppCompatActivity {
                             userName = userProfile.name;
                             userPhone = userProfile.phone;
                             userAddress = userProfile.address;
-                        }
-                        else {
-                            userName = "Khong biet";
-                            userPhone = "Khong biet";
-                            userAddress = "Khong biet";
+
+                            List<MyCardModel> list = (ArrayList<MyCardModel>) getIntent().getSerializableExtra("itemList");
+
+                            if (list != null && list.size() > 0 ){
+                                for (MyCardModel model : list){
+
+                                    final HashMap<String,Object> cartMap = new HashMap<>();
+
+                                    cartMap.put("UserName",userName);
+                                    cartMap.put("UserPhone",userPhone);
+                                    cartMap.put("Address",userAddress);
+                                    cartMap.put("productName",model.getProductName());
+                                    cartMap.put("productPrice",model.getProductPrice());
+                                    cartMap.put("currentDate",model.getCurrentDate());
+                                    cartMap.put("currentTime",model.getCurrentTime());
+                                    cartMap.put("totalQuantity",model.getTotalQuantity());
+                                    cartMap.put("totalPrice",model.getTotalPrice());
+
+                                    firestore.collection("CurrentUser").document(auth.getCurrentUser().getUid())
+                                            .collection("MyOrder").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                                        @Override
+                                        public void onComplete(@NonNull @NotNull Task<DocumentReference> task) {
+                                            Toast.makeText(PlacedOderActivity.this, "Đơn hàng của bạn đã được đặt thành công !", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                }
+                            }
                         }
                     }
                     @Override
                     public void onCancelled(@NonNull @NotNull DatabaseError error) {
                         Toast.makeText(PlacedOderActivity.this,"Có lỗi xảy ra !!! ",Toast.LENGTH_LONG).show();
-                    }
-                });
-            }
-
-        }
-
-        List<MyCardModel> list = (ArrayList<MyCardModel>) getIntent().getSerializableExtra("itemList");
-
-        if (list != null && list.size() > 0 ){
-            for (MyCardModel model : list){
-
-                final HashMap<String,Object> cartMap = new HashMap<>();
-
-                cartMap.put("UserName",userName);
-                cartMap.put("UserPhone",userPhone);
-                cartMap.put("Address",userAddress);
-                cartMap.put("productName",model.getProductName());
-                cartMap.put("productPrice",model.getProductPrice());
-                cartMap.put("currentDate",model.getCurrentDate());
-                cartMap.put("currentTime",model.getCurrentTime());
-                cartMap.put("totalQuantity",model.getTotalQuantity());
-                cartMap.put("totalPrice",model.getTotalPrice());
-
-                firestore.collection("CurrentUser").document(auth.getCurrentUser().getUid())
-                        .collection("MyOrder").add(cartMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-                    @Override
-                    public void onComplete(@NonNull @NotNull Task<DocumentReference> task) {
-                        Toast.makeText(PlacedOderActivity.this, "Đơn hàng của bạn đã được đặt thành công !", Toast.LENGTH_SHORT).show();
-                        finish();
                     }
                 });
             }

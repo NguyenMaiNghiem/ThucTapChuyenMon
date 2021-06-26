@@ -132,7 +132,7 @@ public class DetailActivity extends AppCompatActivity {
             price.setText(viewAllModel.getPrice()+" VNĐ");
             rating.setText(viewAllModel.getRating());
 
-            totalPrice = viewAllModel.getPrice()*totalQuantity;
+            totalPrice = Integer.parseInt(viewAllModel.getPrice())*totalQuantity;
         }
 //        if (sanPhamNoiBat != null){
 //            Glide.with(getApplicationContext()).load(sanPhamNoiBat.getImg_url()).into(detailImg);
@@ -152,7 +152,7 @@ public class DetailActivity extends AppCompatActivity {
                     totalQuantity++;
                     quantity.setText(String.valueOf(totalQuantity));
 
-                    totalPrice = viewAllModel.getPrice()*totalQuantity;
+                    totalPrice = Integer.parseInt(viewAllModel.getPrice())*totalQuantity;
                 }
             }
         });
@@ -164,7 +164,7 @@ public class DetailActivity extends AppCompatActivity {
                     totalQuantity--;
                     quantity.setText(String.valueOf(totalQuantity));
 
-                    totalPrice = viewAllModel.getPrice()*totalQuantity;
+                    totalPrice = Integer.parseInt(viewAllModel.getPrice())*totalQuantity;
                 }
             }
         });

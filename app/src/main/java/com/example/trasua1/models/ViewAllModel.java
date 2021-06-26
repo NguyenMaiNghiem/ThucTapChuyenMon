@@ -3,14 +3,13 @@ package com.example.trasua1.models;
 import java.io.Serializable;
 
 public class ViewAllModel implements Serializable {
-    public String name,category,rating,img_url;
-    public int price;
+    public String name,category,rating,img_url,price;
 
 
     public ViewAllModel() {
     }
 
-    public ViewAllModel(String name, int price, String category, String rating, String img_url) {
+    public ViewAllModel(String name, String price, String category, String rating, String img_url) {
         this.name = name;
         this.price = price;
         this.category = category;
@@ -26,11 +25,11 @@ public class ViewAllModel implements Serializable {
         this.name = name;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
