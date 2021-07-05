@@ -240,9 +240,9 @@ public class DetailActivity extends AppCompatActivity {
 
         final HashMap<String,Object> cartMap = new HashMap<>();
 
-        cartMap.put("UserName",userName);
-        cartMap.put("UserPhone",userPhone);
-        cartMap.put("Address",userAddress);
+        cartMap.put("userName",userName);
+        cartMap.put("userPhone",userPhone);
+        cartMap.put("userAddress",userAddress);
         cartMap.put("productName",viewAllModel.getName());
         cartMap.put("productPrice",price.getText().toString());
         cartMap.put("currentDate",saveCurrentDate);

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TraSua1</string>
+    <string name="app_name">Trà Sữa Rilley</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">SĐT : 094 420 30 11 </string>
@@ -12,6 +12,9 @@
     <string name="menu_voucher">Voucher</string>
     <string name="menu_hoso">Hồ Sơ</string>
     <string name="menu_thanhtoan">Thanh Toán</string>
+    <string name="menu_resetpassword">Đổi Mật Khẩu</string>
+    <string name="menu_map">Vị Trí</string>
+    <string name="menu_map1">Vị Trí Cửa Hàng</string>
     <string name="menu_giohang">Giỏ Hàng</string>
     <string name="menu_dangxuat">Đăng Xuất</string>
     <string name="menu_dangnhap">Đăng Nhập</string>

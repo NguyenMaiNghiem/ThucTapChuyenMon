@@ -29,6 +29,10 @@
             android:icon="@drawable/ic_baseline_payment_24"
             android:title="@string/menu_thanhtoan" />
         <item
+            android:id="@+id/mapsFragment"
+            android:icon="@drawable/ic_baseline_location_on_24"
+            android:title="@string/menu_map" />
+        <item
             android:id="@+id/nav_dangnhap"
             android:icon="@drawable/ic_baseline_person_pin_24"
             android:title="@string/menu_dangnhap" />

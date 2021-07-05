@@ -18,6 +18,7 @@ public class UserModel {
         this.email = email;
         this.password = password;
         this.address = address;
+        this.profileImg = "https://firebasestorage.googleapis.com/v0/b/trasua1.appspot.com/o/anhdaidien.jpg?alt=media&token=3fe54faa-5d8c-4d32-ab45-ddb6a5c4361d";
         this.isAdmin = "false";
     }
 

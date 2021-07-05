@@ -11,89 +11,43 @@
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint1"
+    <TextView
+        android:id="@+id/tongtien"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
+        android:layout_height="wrap_content"
+        android:background="#3EA6EC"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="Tổng : 0 VNĐ"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true">
+    </TextView>
 
-        <ImageView
-            android:id="@+id/img_giohang"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/giohang"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.143" />
-
-        <TextView
-            android:layout_width="341dp"
-            android:layout_height="78dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:text="Giỏ hàng của bạn đang trống Hãy mua gì đó đi"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_giohang"
-            app:layout_constraintVertical_bias="0.16000003" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint2"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        tools:listitem="@layout/gio_hang_item"
+        android:layout_below="@id/tongtien"
+        android:layout_above="@+id/buy_now">
+    </androidx.recyclerview.widget.RecyclerView>
 
-        <TextView
-            android:id="@+id/tongtien"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#3EA6EC"
-            android:gravity="center"
-            android:padding="12dp"
-            android:text="Tổng : 0 VNĐ"
-            android:textColor="@color/white"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-        </TextView>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buy_now"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/round_bg2"
+        android:text="Mua Ngay"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true">
+    </androidx.appcompat.widget.AppCompatButton>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/buy_now"
-            app:layout_constraintVertical_bias="0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tongtien">
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buy_now"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/round_bg2"
-            android:text="Mua Ngay"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-        </androidx.appcompat.widget.AppCompatButton>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>
